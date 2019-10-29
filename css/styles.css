@@ -1,0 +1,189 @@
+* {
+	box-sizing: border-box;
+}
+
+.outer{
+	display: flex;
+	flex-direction: column;
+	width: 100%;
+	height: 100%;
+	color: rgb(0, 0, 0);
+	padding: 0.5em;
+}
+
+.gameText{
+	flex: 1;
+	display: grid;
+	grid-template-columns: repeat(2, 1fr);
+	grid-gap: 0.80em;
+	grid-template-areas: 
+	"instructions instructions"
+	"s s"
+	"b b"
+	"bm bm"
+	"lives score";
+	color: rgb(0, 0, 0);
+	padding: 0.5em;
+}
+
+.gameArea {
+	flex: 1;
+}
+
+.instructions {
+	grid-area: instructions;
+	font-family: 'Roboto Mono', monospace;
+	text-align: center;
+}
+
+#total {
+	grid-area: score;
+}
+
+#lives {
+	grid-area: lives;
+}
+
+#total, #lives {
+	font-size: 4vw;
+	font-weight: bold;
+	display: flex;
+	align-items: center;
+	margin: 0.75em 0 0.75em 0;
+}
+
+#table {
+	grid-area: table;
+	width: 100%;
+	height: 100%;
+}
+
+.playarea {
+	grid-area: playarea;
+	width: 100%;
+	height: 100%;
+	display: grid;
+	grid-gap: 0.5em;
+	grid-template-columns: repeat(4, 1fr); 
+	grid-template-rows: repeat(4, 1fr);
+}
+
+button.cardtop {
+	width: 100%;
+	height: 100%;
+	padding: 0;
+	margin: 0;
+	/* border: 2px solid #ffffff; */
+	background-image: url("../images/card.svg"); 
+	background-size: 100% 100%;
+  	/* box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.2), 0 3px 10px 0 rgba(0, 0, 0, 0.19); */
+}
+
+.cardtop:focus, button#restart:focus, .cardtop:hover, button#restart:hover {
+	outline: 4px dashed #2680ca;
+	/* border: 4px dashed #2680ca; */
+    box-shadow: 0 0 10px rgb(99, 173, 235);
+}
+
+.card {
+	position: relative;
+	opacity: 0;
+	margin: 0;
+	padding: 0.25em;
+	width: 100%;
+	height: 100%;
+	background: #ffffff;   
+  	/* box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.2), 0 3px 10px 0 rgba(0, 0, 0, 0.19); */
+}
+
+#gameover {
+	grid-area: table;
+	margin: auto;
+	padding: 2em;
+}
+
+button#restart {
+	width: 11em;
+	height: 6em;
+	background-image: url('../images/newgame.svg');
+	background-size: cover;
+	border: 2px solid #FFFFFF;;
+	/* box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2), 0 3px 10px 0 rgba(0, 0, 0, 0.19); */
+}
+
+button:active#restart {
+	box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.301), 0 3px 10px 0 rgba(0, 0, 0, 0.219);
+	transform: translateY(4px);
+  }
+
+#story, #lives, #gameover, #total, .points, button {
+	font-family: 'Press Start 2P', cursive;
+}
+
+.scoreChart {
+	width: 6.5em;
+	height: 6.25em;
+	float: left;
+}
+
+#s{
+	grid-area: s;
+}
+
+#b{
+	grid-area: b;
+}
+
+#bm{
+	grid-area: bm;
+}
+
+#s, #b, #bm{
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.points {
+	font-size: 4vw;
+	font-weight: bold;
+	padding: 0 0 0 1em;
+}
+
+#gameover {
+	margin: auto;
+	text-align: center;
+	width: 100%;
+	height: 100%;
+}
+
+.goText {
+	margin-bottom: 0.75em;
+	font-size: 5vw;
+}
+
+.visuallyhidden {
+	border: 0;
+	clip: rect(0 0 0 0);
+    clip-path: inset(50%);
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    width: 1px;
+    white-space: nowrap;
+}
+
+@media (min-width: 62.5em) {
+	.outer {
+	flex-direction: row;
+	}
+	.points, #lives, #total {
+		font-size: 2.5vw;
+	}
+	.scoreChart {
+		width: 10vw;
+		height: 10vw;
+	}
+}

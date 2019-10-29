@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8" name="viewport" content="width=device-width, initial-scale=1">
+	<title>Banana Allergy Game</title>
+	<link rel="stylesheet" type="text/css" href="css/normalize.css">
+	<link rel="stylesheet" type="text/css" href="css/styles.css">
+	<link href="https://fonts.googleapis.com/css?family=Press+Start+2P" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Roboto+Mono" rel="stylesheet">
+	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.js"></script>
+
+</head>
+<body>
+
+	<main id="outer" class="outer">
+		<div class="gameText">
+			<h1 class="visuallyhidden">Instructions and Scoring</h1>
+			<div class="instructions">
+				<h2 class="visuallyhidden">Instructions</h2>
+				<p id="story">Oh no! You are a monkey who has a banana allergy!</p>
+				<p>Score as many points as possible, but watch out for bananas!</p>
+			</div>
+			<div id="s"><img src="images/safe.svg" alt="Safe" class="scoreChart"><div class="points"> . . . 100pts</div></div>
+			<div id="b"><img src="images/banana.svg" alt="Banana" class="scoreChart"><div class="points">  . . . -200pts<br>  . . . -1 life</div></div>
+			<div id="bm"><img src="images/milk.svg" alt="Banana Milk" class="scoreChart"><div class="points"> . . . 300pts</div></div>
+			<div id='lives'></div>
+			<div id="total"></div>
+		</div>
+		<div class="gameArea">	
+			<h2 class="visuallyhidden">Game Board</h2>
+			<div id="table"></div>
+			<div id="gameover" hidden></div>
+		</div>
+	</main>
+	
+
+
+	<script type="text/javascript" src="scripts/scripts.js"></script>
+</body>
+</html>
