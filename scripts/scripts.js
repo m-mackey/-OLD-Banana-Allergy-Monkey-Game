@@ -21,10 +21,10 @@ $(document).ready(function() {
 	];
 
 	function shuffle(arr) {
-		let buffer = [],
-			start;
+		let buffer = [];
+		let	start;
 
-		for (var i = arr.length; i >= arr.length && i > 0; i--) {
+		for (let i = arr.length; i >= arr.length && i > 0; i--) {
 			start = Math.floor(Math.random() * arr.length);
 			buffer.push(arr.splice(start, 1)[0]);
 		}
@@ -32,7 +32,7 @@ $(document).ready(function() {
 		let deck = buffer.length;
 		let text = '<div class="playarea">';
 
-		for (i = 0; i < deck; i++) {
+		for (let i = 0; i < deck; i++) {
 			text +=
 				'<button class="cardtop" tabindex="0"><img  class="card" src="images/' +
 				buffer[i] +
@@ -75,7 +75,12 @@ $(document).ready(function() {
 			$(this).off('click');
 			break;
 		}
-		//for game end when lives reach 0
+
+		livesCheck();
+	});
+
+	function livesCheck (){
+	//check to see if lives remaining are 0 and if to end and restart game
 		if (lives <= 0) {
 			$('.cardtop').off('click');
 			$('#table').fadeOut(1500, function() {
@@ -92,9 +97,9 @@ $(document).ready(function() {
 					window.location.reload();
 				});
 			});
-		}
-	});
-
+		};
+	};
+	
 	$('#total').html('Score: ' + totalScore);
 
 });

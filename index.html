@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+	<!-- check meta etc tags -->
 	<meta charset="UTF-8" name="viewport" content="width=device-width, initial-scale=1">
 	<title>Banana Allergy Game</title>
 	<link rel="stylesheet" type="text/css" href="css/normalize.css">
@@ -13,7 +14,8 @@
 <body>
 
 	<main id="outer" class="outer">
-		<div class="gameText">
+		<div class="gameText"> 
+			<!-- change this div to section, figure out the h1 for each -->
 			<h1 class="visuallyhidden">Instructions and Scoring</h1>
 			<div class="instructions">
 				<h2 class="visuallyhidden">Instructions</h2>
@@ -23,10 +25,11 @@
 			<div id="s"><img src="images/safe.svg" alt="Safe" class="scoreChart"><div class="points"> . . . 100pts</div></div>
 			<div id="b"><img src="images/banana.svg" alt="Banana" class="scoreChart"><div class="points">  . . . -200pts<br>  . . . -1 life</div></div>
 			<div id="bm"><img src="images/milk.svg" alt="Banana Milk" class="scoreChart"><div class="points"> . . . 300pts</div></div>
-			<div id='lives'></div>
+			<div id="lives"></div>
 			<div id="total"></div>
 		</div>
 		<div class="gameArea">	
+			<!-- change this div to section, figure out the h1 for each -->
 			<h2 class="visuallyhidden">Game Board</h2>
 			<div id="table"></div>
 			<div id="gameover" hidden></div>
