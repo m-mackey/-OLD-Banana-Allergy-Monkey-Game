@@ -11,22 +11,22 @@
 	padding: 0.5em;
 }
 
-.gameText{
+.game-text{
 	flex: 1;
 	display: grid;
 	grid-template-columns: repeat(2, 1fr);
 	grid-gap: 0.80em;
 	grid-template-areas: 
 	"instructions instructions"
-	"s s"
-	"b b"
-	"bm bm"
+	"safe safe"
+	"banana banana"
+	"banana-milk banana-milk"
 	"lives score";
 	color: rgb(0, 0, 0);
 	padding: 0.5em;
 }
 
-.gameArea {
+.game-area {
 	flex: 1;
 }
 
@@ -58,8 +58,8 @@
 	height: 100%;
 }
 
-.playarea {
-	grid-area: playarea;
+.play-area {
+	grid-area: play-area;
 	width: 100%;
 	height: 100%;
 	display: grid;
@@ -68,7 +68,7 @@
 	grid-template-rows: repeat(4, 1fr);
 }
 
-button.cardtop {
+button.card-top {
 	width: 100%;
 	height: 100%;
 	padding: 0;
@@ -79,7 +79,7 @@ button.cardtop {
   	/* box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.2), 0 3px 10px 0 rgba(0, 0, 0, 0.19); */
 }
 
-.cardtop:focus, button#restart:focus, .cardtop:hover, button#restart:hover {
+.card-top:focus, button#restart:focus, .card-top:hover, button#restart:hover {
 	outline: 4px dashed #2680ca;
 	/* border: 4px dashed #2680ca; */
     box-shadow: 0 0 10px rgb(99, 173, 235);
@@ -96,10 +96,14 @@ button.cardtop {
   	/* box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.2), 0 3px 10px 0 rgba(0, 0, 0, 0.19); */
 }
 
-#gameover {
+#game-over {
 	grid-area: table;
 	margin: auto;
 	padding: 2em;
+	margin: auto;
+	text-align: center;
+	width: 100%;
+	height: 100%;
 }
 
 button#restart {
@@ -116,29 +120,29 @@ button:active#restart {
 	transform: translateY(4px);
   }
 
-#story, #lives, #gameover, #total, .points, button {
+#story, #lives, #game-over, #total, .points, button {
 	font-family: 'Press Start 2P', cursive;
 }
 
-.scoreChart {
+.score-chart {
 	width: 6.5em;
 	height: 6.25em;
 	float: left;
 }
 
-#s{
-	grid-area: s;
+#safe{
+	grid-area: safe;
 }
 
-#b{
-	grid-area: b;
+#banana{
+	grid-area: banana;
 }
 
-#bm{
-	grid-area: bm;
+#banana-milk{
+	grid-area: banana-milk;
 }
 
-#s, #b, #bm{
+#safe, #banana, #banana-milk{
 	display: flex;
 	align-items: center;
 	justify-content: center;
@@ -150,19 +154,19 @@ button:active#restart {
 	padding: 0 0 0 1em;
 }
 
-#gameover {
+/* #game-over {
 	margin: auto;
 	text-align: center;
 	width: 100%;
 	height: 100%;
-}
+} */
 
-.goText {
+.game-over-text {
 	margin-bottom: 0.75em;
 	font-size: 5vw;
 }
 
-.visuallyhidden {
+.visually-hidden {
 	border: 0;
 	clip: rect(0 0 0 0);
     clip-path: inset(50%);
@@ -182,7 +186,7 @@ button:active#restart {
 	.points, #lives, #total {
 		font-size: 2.5vw;
 	}
-	.scoreChart {
+	.score-chart {
 		width: 10vw;
 		height: 10vw;
 	}

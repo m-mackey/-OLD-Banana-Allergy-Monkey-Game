@@ -30,11 +30,11 @@ $(document).ready(function() {
 		}
 
 		let deck = buffer.length;
-		let text = '<div class="playarea">';
+		let text = '<div class="play-area">';
 
 		for (let i = 0; i < deck; i++) {
 			text +=
-				'<button class="cardtop" tabindex="0"><img  class="card" src="images/' +
+				'<button class="card-top" tabindex="0"><img  class="card" src="images/' +
 				buffer[i] +
 				'.svg" alt="' + buffer[i] + '"></button>';
 		}
@@ -50,8 +50,8 @@ $(document).ready(function() {
 	let lives = 3;
 	$('#lives').html('Lives: ' + lives);
 
-	$('.cardtop').click(function() {
-		$('.cardtop', this).fadeTo(400, 0);
+	$('.card-top').click(function() {
+		$('.card-top', this).fadeTo(400, 0);
 		$('.card', this).fadeTo(400, 1);
 		$(this).attr('tabindex', -1); //removes card from tabindex so it's skipped when using keyboard
 		
@@ -82,13 +82,13 @@ $(document).ready(function() {
 	function livesCheck (){
 	//check to see if lives remaining are 0 and if to end and restart game
 		if (lives <= 0) {
-			$('.cardtop').off('click');
+			$('.card-top').off('click');
 			$('#table').fadeOut(1500, function() {
-				$('#gameover')
+				$('#game-over')
 					.fadeIn(1500)
-					.html('<p class="goText">Game Over</p>');
+					.html('<p class="game-over-text">Game Over</p>');
 				document
-					.getElementById('gameover')
+					.getElementById('game-over')
 					.insertAdjacentHTML(
 						'beforeend',
 						'<button id="restart">New Game</button>'
