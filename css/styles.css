@@ -184,7 +184,7 @@ button:active#restart {
 	flex-direction: row;
 	}
 	.points, #lives, #total {
-		font-size: 2.5vw;
+		font-size: 2vw;
 	}
 	.score-chart {
 		width: 10vw;
